@@ -1,0 +1,152 @@
+$color-get-info: rgba(50, 50, 200, 0.5);
+$color-get-info-text: #fff;
+$color-post-info: rgba(50, 200, 50, 0.5);
+$color-post-info-text: #fff;
+$color-delete-info: rgba(200, 50, 50, 0.5);
+$color-delete-info-text: #fff;
+$color-get-btn: rgb(200, 200, 50);
+
+.fetch-viewer {
+  padding: 8px 10px;
+  margin: 6px 0;
+
+  &.get-viewer {
+    background-color: $color-get-info;
+    color: $color-get-info-text;
+  }
+
+  &.post-viewer {
+    background-color: $color-post-info;
+    color: $color-post-info-text;
+  }
+
+  &.delete-viewer {
+    background-color: $color-delete-info;
+    color: $color-delete-info-text;
+  }
+
+  .exec-btn {
+    background-color: #fff;
+    border: 1px solid;
+    border-radius: 4px;
+    font-weight: bold;
+    padding: 4px 8px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .exec-get-btn {
+    border-color: darken($color-get-btn, 5%);
+    color: $color-get-btn;
+  }
+
+  .toggle-btn {
+    padding: 5px 0;
+
+    i {
+      margin-left: 5px;
+    }
+  }
+
+  .config-title {
+    .summary {
+      font-weight: bold;
+      font-size: 18px;
+
+      span {
+        margin: 0 12px;
+      }
+
+      >button {
+        float: right;
+        margin: 0 20px;
+      }
+    }
+  }
+
+  .config-body {
+    display: flex;
+
+    .details {
+      display: table;
+      width: 50%;
+      padding: 0 16px;
+
+      .toggle-btn {
+        font-size: 16px;
+
+        i {
+          font-size: 17px;
+          margin-left: 5px;
+        }
+      }
+
+      .details-table {
+        background-color: #fff;
+        color: #000;
+        opacity: 0;
+        height: 0;
+        padding: 0px 8px;
+        overflow: hidden;
+        transition: all .1s ease .1s;
+
+        &.open {
+          opacity: 1;
+          height: 100%;
+          padding: 5px 8px;
+        }
+
+        >div {
+          display: table-cell;
+          padding: 4px 8px;
+          width: 500px;
+        }
+      }
+    }
+
+    .fetch-test-box {
+      display: flex;
+      width: 50%;
+
+      >div {
+        padding: 0px 10px;
+      }
+
+      .param-input {
+        width: 40%;
+
+        textarea {
+          width: 100%;
+          opacity: 0;
+          height: 0;
+          display: block;
+          float:left;
+          overflow: hidden;
+          padding: 0;
+          margin: 0;
+
+          &.open {
+            opacity: 1;
+            min-height: 50px;
+            float: none;
+          }
+        }
+      }
+
+      .response {
+        width: 60%;
+        max-height: 200px;
+        overflow: auto;
+
+        div:last-child {
+          color: #000;
+          background-color: #fff;
+          word-break: break-all;
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+}
