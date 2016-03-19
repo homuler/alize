@@ -46,7 +46,7 @@ export function assertJSON(json, config, path = '') {
   }
 }
 
-export function assertEnum(obj, prop, { array, error }, path) {
+export function assertEnum(obj, prop, { array = [], error }, path) {
   if (obj == null) {
     return;
   }

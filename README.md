@@ -122,11 +122,23 @@ The UrlConfig constructor receives such a object as specified below.
 
 ### Path
 The access path to the method is determined as below.
+
 1. If the path is specified, then the value is that.
   - e.g. 'foo.bar'
 1. If the path is /, then the access path will be 'root'
 1. Thrashes in the path is replaced by dots, and the dynamic parameters and superfluous dots are removed
   - e.g. '/foo/:id/bar' -> 'foo.bar'
+
+```js
+const alizeBuilder = alize.setup();
+alizeBuilder
+  .add({ url: 'foo', method: 'get' })
+  .add({ url: 'foo/:id/bar', template: 'resources', only: ['index'] });
+
+const client = alizeBuilder.getClient();
+client.foo.get(); // When the method is specified, method name will be the value
+clinet.foo.bar.index(); // When the template is specified, methods' name will be the template methods' name
+```
 
 
 ### Template
@@ -291,7 +303,7 @@ const alizeBuilder = alize.setup({
 
 ## API
 ### setup (object) => Alize
-Please refer to [the configuration details](#configuration).
+Please refer to [the configuration details](http://github.com/homuler/alize#configuration).
 
 ### build (object) => AlizeClient
 
@@ -319,7 +331,64 @@ alizeBuilder.add({ url: '/foo', method: 'get' })
   .add({ url: 'bar', method: 'post' });
 ```
 
+#### template method (string, object) => Alize(this)
+
+receives url path string and fetch option object, then generate methods to fetch.
+
+```js
+const alizeBuilder = alize.setup();
+alizeBuilder
+  .resources('bar')
+  .get('foo', {
+    headers: {
+      'Content-Type': 'text/html'
+    },
+    credentials: 'same-origin',
+    process: {
+      post(json) {
+        return json.message;
+      },
+    },
+  });
+
+const alizeClient = alizeBuilder.getClient();
+alizeClient.bar.show({ urlParam: { id : 1 }); // GET /bar/:id
+alizeClient.foo.get(); // GET /foo
+```
+
+The default template methods are below.
+Please also refer to [the template details](https://github.com/homuler/alize#template)
+
+- resources
+- rest
+- get
+- post
+- delete
+- put
+- patch
+- head
+- options
+
 ### AlizeClient
+AlizeClient has the generated metods.
+
+#### Generated method
+receives post parameter and fetch remote data.
+
+##### Parameter Property
+|name|type|description|
+|----|----|-----------|
+|urlParam|object|When the url has parameters, then the value is specified here
+|data|object|The same parameter as the fetch API's data|
+
+```js
+const client = alize.build({ urls: [{ url: 'foo/:id', method: 'get' }] });
+client.foo.get({ urlParam: { id: 1 }, data: { x: 2 } }); // GET /foo/1?x=2
+```
+
+You can't set other fetch options here.
+If you'd like to set options dynamically, then use the next Fetch API wrapper method.
+
 #### Fetch API wrapper
 AlizeClient has the methods which wrap fetch API, other than the generated methods.
 You can fetch data with calling such methods as `get`, `post`, and so on.

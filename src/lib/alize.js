@@ -83,7 +83,7 @@ export default class Alize {
 
   static fetchFactory(name, urlConfig) {
     return function fetchFactory(
-        { urlParam, data } = { urlParam: {}, data: {} }, runtimeOption = {}) {
+        { urlParam = {}, data = {} } = {}, runtimeOption = {}) {
       urlConfig.extendsOption(runtimeOption);
       if (urlConfig.logMode) {
         logger.setMode(urlConfig.logMode);

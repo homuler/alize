@@ -19,7 +19,7 @@ import lazyRESTGenerator from 'template/lazy/rest';
 import UrlConfig from 'data/urlConfig';
 
 export default class AlizeConfig {
-  constructor({ urls, template, option } = { urls: [], template: {}, option: {} }) {
+  constructor({ urls = [], template = {}, option = {} } = {}) {
 
     if (urls) {
       this.urls = urls.map(url => new UrlConfig(url));
