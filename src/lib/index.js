@@ -1,9 +1,9 @@
 'use strict';
 
-import 'babel-polyfill';
-
 import AlizeConfig from 'data/alizeConfig';
 import Alize from 'alize';
+
+import 'babel-polyfill';
 
 export function setup(config = {}) {
   return new Alize(new AlizeConfig(config));

@@ -8,8 +8,6 @@ HTTP Client in JavaScript using Fetch API
 1. to assert the structure of the response JSON.
 
 ## Requirements
-- babel-polyfill
-  - Reflect API
 - whatwg-fetch
   - to use Fetch API in browser environment (you can use another polyfill)
 

@@ -15,6 +15,9 @@ Object.keys(config.entry).forEach((key) => {
 
 config.plugins = [
   new webpack.HotModuleReplacementPlugin(), 
+  new webpack.ProvidePlugin({
+    'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch',
+  }),
 ];
 
 const compiler = webpack(config);

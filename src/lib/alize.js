@@ -12,8 +12,6 @@ import has from 'lodash/has';
 
 mixin(_, { isNil, get, set, has, cloneDeep, assign, assignIn });
 
-import 'babel-polyfill';
-
 import queryString from 'query-string';
 import logger from 'helper/logger';
 import { enproxy } from 'helper/proxy';
@@ -66,18 +64,26 @@ export default class Alize {
       }
     }
     return (async () => {
-      const res = await fetch(url, { method, body, headers, credentials });
-      if (assert && assert.post) {
-        try {
-          const json = await res.json();
-          assertJSON(json, assert.post);
-        } catch (err) {
-          const errorMsg = `assert failed: ${err.message}`;
-          throw new Error(errorMsg);
+      const response = await fetch(url, { method, body, headers, credentials });
+      let result = response;
+      try {
+        if ((assert && assert.post) || (process && process.post)) {
+          result = await result.json();
         }
+
+        if (assert && assert.post) {
+          assertJSON(result, assert.post);
+        }
+
+        if (process && process.post) {
+          result = process.post(result);
+        }
+      } catch (err) {
+        const errorMsg = `assert failed: ${err.message}`;
+        throw new Error(errorMsg);
       }
 
-      return process && process.post ? process.post(res) : res;
+      return result;
     })();
   }
 

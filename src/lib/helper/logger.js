@@ -41,6 +41,7 @@ export class Logger {
       this.setLogLevel(currentLevel);
     }
   }
+
   warn(...params) {
     if (this.logLevel < 2) {
       return;

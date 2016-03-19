@@ -5,7 +5,6 @@ const path = require('path');
 
 module.exports = {
   name: 'lib',
-  devtool: 'eval-cheap-module-sourcemap',
   entry: {
     alize: [path.resolve(__dirname, '../../src/lib/index.js')],
   },
@@ -31,9 +30,4 @@ module.exports = {
   eslint: {
     configFile: path.resolve(__dirname, '../eslint/index.js'),
   },
-  plugins: [
-    new webpack.ProvidePlugin({
-      'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch',
-    }),
-  ],
 };
