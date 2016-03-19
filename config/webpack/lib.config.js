@@ -6,11 +6,11 @@ const path = require('path');
 module.exports = {
   name: 'lib',
   entry: {
-    alize: [path.resolve(__dirname, '../../src/lib/index.js')],
+    alize: [path.resolve(__dirname, '../../src/index.js')],
   },
   output: {
-    path: path.resolve(__dirname, '../../build'),
-    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, '../../dist'),
+    filename: '[name].js',
     library: '[name]',
   },
   resolve: {
@@ -26,6 +26,9 @@ module.exports = {
       { test: /\.js$/, loader: 'babel-loader' },
     ],
   },
+  plugins: [
+    new webpack.optimize.DedupePlugin(),
+  ],
   eslint: {
     configFile: path.resolve(__dirname, '../eslint/index.js'),
   },

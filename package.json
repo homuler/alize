@@ -1,6 +1,8 @@
 {
-  "name": "alizejs",
-  "version": "0.0.0",
+  "name": "alize",
+  "private": true,
+  "version": "0.0.1",
+  "main": "./dist/alize.js",
   "description": "REST Client in JavaScript",
   "config": {
     "node_path": "./src/lib:./test/lib:./test:$NODE_PATH"
@@ -20,9 +22,14 @@
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.5.1",
+    "babel-core": "^6.5.2",
     "babel-eslint": "^5.0.0",
     "babel-loader": "^6.2.3",
+    "babel-polyfill": "^6.5.0",
+    "babel-preset-es2015": "^6.5.0",
     "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-2": "^6.5.0",
+    "babel-preset-stage-3": "^6.5.0",
     "chai": "^3.5.0",
     "css-loader": "^0.23.1",
     "eslint": "^2.2.0",
@@ -47,16 +54,11 @@
     "sinon": "^1.17.3",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.13",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^1.14.1",
+    "whatwg-fetch": "^0.11.0"
   },
   "dependencies": {
-    "babel-core": "^6.5.2",
-    "babel-polyfill": "^6.5.0",
-    "babel-preset-es2015": "^6.5.0",
-    "babel-preset-stage-2": "^6.5.0",
-    "babel-preset-stage-3": "^6.5.0",
     "lodash": "^4.5.0",
-    "query-string": "^3.0.0",
-    "whatwg-fetch": "^0.11.0"
+    "query-string": "^3.0.0"
   }
 }

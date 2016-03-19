@@ -12,11 +12,12 @@ module.exports = {
     alizeTest: testPaths,
   },
   output: {
-    path: path.resolve(__dirname, '../../build'),
-    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, '../../dist'),
+    filename: '[name].js',
   },
   resolve: {
     root: [
+      path.resolve(__dirname, '../../src'),
       path.resolve(__dirname, '../../src/lib'),
       path.resolve(__dirname, '../../test/lib'),
       path.resolve(__dirname, '../../test'),
