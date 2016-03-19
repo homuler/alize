@@ -1,7 +1,7 @@
 {
   "name": "alize",
   "private": true,
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "./dist/alize.js",
   "description": "REST Client in JavaScript",
   "config": {
@@ -16,7 +16,12 @@
     "test:server": "node scripts/testserver.js"
   },
   "keywords": [
-    "rest-client"
+    "rest-client",
+    "http-client",
+    "rest",
+    "http",
+    "client",
+    "browser"
   ],
   "author": "homuler",
   "license": "MIT",
