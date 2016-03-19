@@ -21,10 +21,7 @@ module.exports = {
   },
   module: {
     preLoaders: [
-      {
-        test: /\.js$/,
-        loader: 'eslint-loader',
-      },
+      { test: /\.js$/, exclude: /logger\.js/, loader: 'eslint-loader' },
     ],
     loaders: [
       { test: /\.js$/, exclude: /logger\.js/, loader: 'babel-loader' },

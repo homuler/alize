@@ -153,7 +153,7 @@ export function injectParamsToUrl(urlStr, params = {}) {
       if (paramKey in params) {
         return params[paramKey];
       }
-      // TODO: obscure
+      // TODO: obscure error message
       throw new Error(format.missingParam(paramKey));
     }
     return str;
