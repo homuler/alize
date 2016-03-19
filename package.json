@@ -6,12 +6,12 @@
     "node_path": "./src/lib:./test/lib:./test:$NODE_PATH"
   },
   "scripts": {
-    "dev": "$(npm bin)/webpack-dev-server --inline --hot",
-    "build": "$(npm bin)/webpack",
+    "dev": "node scripts/devserver.js",
+    "build": "$(npm bin)/webpack --config config/webpack/lib.config.js",
     "lint": "$(npm bin)/eslint --config config/eslint/index.js src/ examples/",
     "test": "NODE_PATH=$npm_package_config_node_path $(npm bin)/babel-node ./node_modules/.bin/mocha --opts config/mocha.opts",
     "test:cover": "NODE_PATH=$npm_package_config_node_path $(npm bin)/babel-node $(npm bin)/isparta cover --config config/istanbul.yml ./node_modules/.bin/mocha -- --opts config/mocha.opts",
-    "test:server": "$(npm bin)/webpack-dev-server --config webpack-test.config.js"
+    "test:server": "node scripts/testserver.js"
   },
   "keywords": [
     "rest-client"
