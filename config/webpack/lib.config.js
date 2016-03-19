@@ -12,6 +12,7 @@ module.exports = {
     path: path.resolve(__dirname, '../../dist'),
     filename: '[name].js',
     library: '[name]',
+    libraryTarget: 'umd',
   },
   resolve: {
     root: [
@@ -20,10 +21,10 @@ module.exports = {
   },
   module: {
     preLoaders: [
-      { test: /\.js$/, exclude: /logger\.js/, loader: 'eslint-loader' },
+      { test: /\.js$/, exclude: /(node_modules|logger\.js$)/, loader: 'eslint-loader' },
     ],
     loaders: [
-      { test: /\.js$/, loader: 'babel-loader' },
+      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
     ],
   },
   plugins: [

@@ -1,7 +1,7 @@
 {
   "name": "alize",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "./dist/alize.js",
   "description": "REST Client in JavaScript",
   "config": {
