@@ -34,16 +34,6 @@ export function assertJSON(json, config, path = '') {
       assertJSON(json[prop], children, propPath);
     }
   }
-
-  for (const prop in json) {
-    if (!json.hasOwnProperty(prop)) {
-      continue;
-    }
-    if (!config.hasOwnProperty(prop)) {
-      const propPath = path.length > 0 ? `${path}.${prop}` : prop;
-      logger.warn(`property "${propPath}" is not specified in config`);
-    }
-  }
 }
 
 export function assertEnum(obj, prop, { array = [], error }, path) {

@@ -12,8 +12,8 @@ import has from 'lodash/has';
 
 mixin(_, { isNil, get, set, has, cloneDeep, assign, assignIn });
 
-import queryString from 'query-string';
 import logger from 'helper/logger';
+import queryString from 'query-string';
 import { enproxy } from 'helper/proxy';
 import UrlConfig from 'data/urlConfig';
 import AlizeClient from 'alizeClient';

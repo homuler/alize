@@ -23,8 +23,7 @@ module.exports = {
       { test: /\.js$/, exclude: /logger\.js/, loader: 'eslint-loader' },
     ],
     loaders: [
-      { test: /\.js$/, exclude: /logger\.js/, loader: 'babel-loader' },
-      { test: /logger\.js$/, loader: 'expose?logger!babel-loader' },
+      { test: /\.js$/, loader: 'babel-loader' },
     ],
   },
   eslint: {
