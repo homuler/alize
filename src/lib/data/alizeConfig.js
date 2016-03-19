@@ -82,14 +82,7 @@ AlizeConfig.methodTemplates = {
 
 AlizeConfig.defaultOption = {
   logMode: 'silent',
-  process: {
-    pre(data) {
-      return data;
-    },
-    post(data) {
-      return data;
-    },
-  },
+  process: {},
   headers: {
     'Content-Type': 'application/json',
   },
