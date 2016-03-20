@@ -1,10 +1,10 @@
 language: node_js
 node_js:
-- '5'
+  - '5'
 env:
   global:
     secure: Nev+ElcKYFjaqBKD7GfeVHuSeOTjoTzfCeLmIHP5479opm7p0d8Uxo/AHBB9qTyDKDEV0GYfy2c2IgDJ7q/eAbITw85Sb42MJxHEz3lATYh6G8+0To4e/HpdXASHuXKq1yRWLjbo5vTggL4VR8rtxHsyS/3ZbpROg/K/+B+WKjE7wKKvAzuPcM6nbEp8Jxk0/mkNCHf2SgfCLNY4paCP94Rire7yl+aCmiNKcu6X++9/jNyFF9Vf9Bcf/YfaZYqJruDEGcJsFpSoGEsga/5YRUsTl2TzALuHlrDKNfAnkzGTdiBUo3pxUiCajlRiYoiJTXM1vhqVhCVXvXhhHHxW9c0Wak6wTECNA+8EBiXWBAnVhJI0g9jbbqdCRqAFHlda3chTae9cebIAwknvfd3pb27lj3xhWM1nCg996N33T7NqdpjJap0/wta6pXXo1su70yEeWCC6n9ZyJtIMXlryb4l2E7u0Ha9EfwuV4qbNYkeSQLoS8RyVZZyxfszfgTKbwYJNIwgHFtx7AhQawOzSUSh+4tqsVtfYKddDm0RIHQ2OsaQsViy/NvvVQj3qXUOVS/eY4AflVbabcCDBjX1entUx9S4x4rWs21ynrH4mtWziV5bgq8Tzcr4lkwlRqEtzVhUys4C6PcRZMQZ5q7zzQ2s61JsriN7TjAfBhpgdwi0=
-script
+script:
   - npm run test:cover
 after_success:
   - $(npm bin)/coveralls < ./coverage/lcov.info
