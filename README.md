@@ -1,8 +1,7 @@
 # Alize.js
+[![Build Status](https://travis-ci.org/homuler/alize.svg?branch=master)](https://travis-ci.org/homuler/alize) [![Coverage Status](https://coveralls.io/repos/github/homuler/alize/badge.svg?branch=master)](https://coveralls.io/github/homuler/alize?branch=master) [![npm version](https://badge.fury.io/js/alize.svg)](https://badge.fury.io/js/alize)
 
 HTTP Client in JavaScript using Fetch API
-[![Build Status](https://travis-ci.org/homuler/alize.svg?branch=master)](https://travis-ci.org/homuler/alize)[![Coverage Status](https://coveralls.io/repos/github/homuler/alize/badge.svg?branch=master)](https://coveralls.io/github/homuler/alize?branch=master)[![npm version](https://badge.fury.io/js/alize.svg)](https://badge.fury.io/js/alize)
-
 ## Why Alize.js?
 1. to avoid hard-coding urls when doing ajax.
 1. to assert the structure of the request parameter object.
