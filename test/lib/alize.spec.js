@@ -1,7 +1,7 @@
 'use strict';
 
 import AlizeConfig from 'data/alizeConfig';
-import { Alize } from 'alize';
+import Alize from 'alize';
 
 
 describe('Alize Test', () => {
@@ -9,16 +9,14 @@ describe('Alize Test', () => {
 
   describe('Alize Test (Stub)', () => {
     beforeEach(() => {
-      console.log('Alize');
       alize = new Alize(new AlizeConfig());
-      console.log('Alize initialized');
     });
 
     afterEach(() => {
     });
   });
 
-  describe('Aliz Test (not Stub)', () => {
+  describe('Alize Test (not Stub)', () => {
     beforeEach(() => {
       alize = new Alize(new AlizeConfig());
     });
@@ -57,11 +55,9 @@ describe('Alize Test', () => {
             },
             process: {
               pre: (data) => {
-                logger.log(data);
                 return data;
               },
               post: (data) => {
-                logger.log(data);
                 return data;
               },
             },
@@ -78,7 +74,6 @@ describe('Alize Test', () => {
       const alizeConf = new AlizeConfig(config);
       const alizeObj = new Alize(alizeConf);
       alizeObj.client.api.v1.hello.get();
-      console.log(alizeObj);
     });
   });
 });

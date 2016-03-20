@@ -20,10 +20,9 @@ require('sinon/lib/sinon/assert');
 
 global.expect = chai.expect;
 
-import logger from 'helper/logger';
-global.logger = logger;
-
 import { fetch } from 'whatwg-fetch';
 if (!global.fetch) {
   global.fetch = fetch;
 }
+
+import 'babel-polyfill';
