@@ -18,7 +18,7 @@ npm i --save alize
 
 ## Examples
 ```js
-import alize from 'alize';
+const alize = require('alize');
 
 const alizeBuilder = alize.setup({
   urls: [
