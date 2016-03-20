@@ -7,6 +7,11 @@ HTTP Client in JavaScript using Fetch API
 1. to assert the structure of the request parameter object.
 1. to assert the structure of the response JSON.
 
+## Installation
+```sh
+npm i --save alize
+```
+
 ## Requirements
 - whatwg-fetch
   - to use Fetch API in browser environment (you can use another polyfill)
